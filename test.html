@@ -29,13 +29,23 @@
 		position: relative;
 		bottom: 16px;
 	}
-	ul.nav li {
+	
+	ul.nav li{
 		display: inline-block;
 		padding: 10px 20px;
 		font-size: 24px;
 		text-decoration: none;
+		color: #bbb;
 	}
-	ul.nav li:hover {
+	
+	.top-bar-link a{
+		color: #bbb;
+		font-size: 24px;
+		transform: translateY(-100%);
+		text-decoration: none;
+	}
+	
+	.top-bar-link a:hover{
 		color: #ddd;
 	}
 	
@@ -57,30 +67,30 @@
 <body>
 
 <ul class="nav">
-<li>
-	<div class="top-bar-title">
-		<a href="#home">Colin Voorhis</a>
-	</div>
-</li>
-<li style="transform: translateY(-10%);">Home</li>
-<li style="transform: translateY(-10%);">About</li>
-<li style="transform: translateY(-10%);">Contact</li>
+	<li>
+		<div class="top-bar-title">
+			<a href="./index.html">Colin Voorhis</a>
+		</div>
+	</li>
+	<li style="transform: translateY(-12.5%);">
+		<div class="top-bar-link">
+			<a href="./index.html" style="text-decoration: none;">Home</a>
+		</div>
+	</li>
+	<li style="transform: translateY(-12.5%);">
+		<div class="top-bar-link">
+			<a href="./test.html" style="text-decoration: none;">Contact</a>
+		</div>
+	</li>
+	<li style="transform: translateY(-12.5%);">
+		<div class="top-bar-link">
+			<a href="#home" style="text-decoration: none;">About</a>
+		</div>
+	</li>
 </ul>
 
 <div class="centered-content">
-	<h1>Okay</h1>
-	<h2>Okay</h2>
-	<h3>Okay</h3>
-	<h4>Okay</h4>
-	<h5>Okay</h5>
-	<h6>Okay</h6>
-	<p>This is epic.</p>
-
-	<button type="button">Test!!!</button> <br>
-	<button type="button"> Test!!! </button>
-
-	<p style="color:red;">This is a red paragraph.</p>
-</div>
+	<h1>Test Page!!!</h1>
 
 </body>
 </html>
