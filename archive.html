@@ -5,17 +5,8 @@
 <html>
 <head>
 	
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4EXF7XT2C"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-R4EXF7XT2C');
-	</script>
-	
 	<title>Colin Voorhis</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="/images/favicon.png">
 	
 	<style>
@@ -104,6 +95,36 @@
 		color: #fff;
 	}
 	
+	.dropdown {
+		display: inline-block;
+		position: relative;
+	}
+	
+	.top-bar-dropdown {
+		display: none;
+		position: absolute;
+		overflow: auto;
+	}
+	
+	.top-bar-dropdown a{
+		color: #bbb;
+		font-size: 20px;
+		font-family: Courier, sans-serif;
+		display: block;
+		text-decoration: none;
+		padding:10px 15px;
+		background-color: #000;
+	}
+	
+	
+	.top-bar-dropdown a:hover{
+		color: #ddd;
+	}
+
+	.dropdown:hover .top-bar-dropdown {
+		display: block;
+	}
+	
 	</style>
 	
 </head>
@@ -118,7 +139,17 @@
 	</li>
 	<li style="transform: translateY(-10%);">
 		<div class="top-bar-link">
-			<a href="./archive.html" style="text-decoration: none;">Archive</a>
+			<div class="dropdown">
+		<div class="top-bar-link">
+			<a href="./archive.html" style="text-decoration: none;">ContactContact</a>
+		</div>
+		<div class="top-bar-dropdown">
+			<br>
+			<a href="#">Dashboard</a>
+			<a href="#">Setting</a>
+			<a href="#">Logout</a>
+		</div>
+	 </div>
 		</div>
 	</li>
 </ul>
@@ -126,6 +157,17 @@
 <div class="normal-content">
 	<h1>Image Attributions</h1>
 	<p>Github Logo Icon by <a href="https://iconscout.com/contributors/pixel-icons">Pixel Icons</a> on <a href="https://iconscout.com">IconScout</a></p>
+	<div class="dropdown">
+		<div class="top-bar-link">
+			<a href="./archive.html" style="text-decoration: none;">Contact</a>
+		</div>
+		<div class="top-bar-dropdown">
+			<br>
+			<a href="#">Dashboard</a>
+			<a href="#">Setting</a>
+			<a href="#">Logout</a>
+		</div>
+	 </div>
 </div>
 
 </body>
