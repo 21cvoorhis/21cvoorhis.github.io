@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis Portfolio</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+section a {
+    text-decoration: underline;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+/* ===== Contact Layout ===== */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-inner {
+    width: 100%;
+    max-width: 600px; /* Shared width for both text and form */
+}
+
+/* ===== Contact Text ===== */
+.contact-text {
+    text-align: left;
+}
+
+/* ===== Contact Form ===== */
+form {
+    background-color: #1a1a1a;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    width: 100%; /* Matches .contact-inner */
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #ddd;
+    font-size: 15px;
+    box-sizing: border-box;
+    line-height: inherit;
+	font-family: inherit;
+}
+
+textarea {
+    resize: none; /* Prevent resizing */
+    height: 140px; /* Static height */
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #1de9b6;
+}
+
+button {
+    background-color: #1de9b6;
+    color: #111;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #15c99b;
+}
+
+/* ===== Success Message ===== */
+#form-status {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+    color: #1de9b6;
+    font-weight: bold;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Contact Info -->
+<section id="contact">
+    <div class="contact-content">
+        <div class="contact-inner">
+            <h1>Contact</h1>
+            <div class="contact-text">
+                <p>Thanks for reaching out! I am best reached at 
+                    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a> 
+                    or via the contact form below. You can also view my work on 
+                    <a href="https://github.com/21cvoorhis">GitHub</a> or connect with me on 
+                    <a href="https://www.linkedin.com/in/colinvoorhis/">LinkedIn</a>.
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contact-form" action="https://formspree.io/f/meopkaby" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="_replyto" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+                <div id="form-status">Message sent!</div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
+
+<!-- ===== Script for “Message Sent” Confirmation ===== -->
+<script>
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+
+    try {
+        const response = await fetch(action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            status.style.display = 'block';
+            form.reset();
+            setTimeout(() => status.style.display = 'none', 4000);
+        } else {
+            alert('There was a problem sending your message.');
+        }
+    } catch (error) {
+        alert('There was a problem sending your message. Please try again later.');
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+section a {
+    text-decoration: underline;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="../index.html">About</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+<!-- Content -->
+<section id="content">
+	<h1>Co-60 Source Shielding</h1>
+	<h2>October 2024 - December 2024</h2>
+	<iframe 
+		src="pdf/5606_redacted.pdf" 
+		width="100%" 
+		height="600px" 
+		style="border: none;">
+	</iframe>
+    <p>
+	During my senior year at OSU, I had the pleasure of completing a radiation protection and shielding course with
+	<a href="https://mae.osu.edu/people/kandlakunta.1">Dr. Kanlakunta</a> and <a href="https://www.linkedin.com/in/richard-denning-b413a5a5/">Dr. Denning</a>.
+	The final project for this course was to design an appropriate set of encapsulation and radiative shielding layers to surround a radioactive source,
+	and to verify its effectiveness with a simulation in <a href="https://en.wikipedia.org/wiki/Monte_Carlo_N-Particle_Transport_Code">MNCP</a> (a radiation transport simulator developed by Los Alamos).
+	I was assigned team leader for this project and worked with three other students to design a highly optimized lead-concrete encapsulation system for a cylindrical Cobalt-60 source.
+	</p>
+	<p>
+	My major contribution to this project was in its software.
+	First, I created an MCNP input deck to test a series of simplistic shield designs, and worked with my group members to develop a mathematical model that matched the output of these simulations.
+	Once we had derived a set of equations that could accurately predict MCNP's output metrics for our shield designs, I created a Python script to analyze millions of possible shield configurations.
+	This script varies the thickness and order of several material layers (all of which meet the specified radition attenuation requirements) and calculates the cost, mass, and volume of each design.
+	Then, a custom efficiency metric is calculated based on these parameters, and used to determine the overall most effective encapsulation design.
+	</p>
+	<p>
+	The final report shown here is in an abriged format.
+	MCNP is subject to US nuclear technology export controls, so its input decks are not included in this version of the report.
+	The rest of the report is functionally unaltered, and the Python script is included in Appendix D.
+	</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
+
+</body>
+</html>

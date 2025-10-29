@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+section a {
+    text-decoration: underline;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+
+/* ===== Button ===== */
+.github-link {
+    display: inline-block;
+    background-color: #24292e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.github-link:hover {
+    background-color: #1de9b6;
+    color: #111;
+    transform: translateY(-2px);
+}
+.github-link svg {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    transition: fill 0.2s;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+}
+.github-link:hover svg {
+    fill: #111;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="../index.html">About</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+<!-- Content -->
+<section id="content">
+	<h1>Tanks</h1>
+	<h2>December 2020 - January 2022</h2>
+	<!-- Embedded game (currently broken)
+	<div style="text-align:center;">
+		<iframe
+			src="game/index.html"
+			width="640"
+			height="480"
+			style="border:none;"
+			allowfullscreen>
+		</iframe>
+	</div> -->
+	<p>
+		<a class="github-link" href="https://github.com/21cvoorhis/Tanks/" target="_blank">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.29 3.438 9.773 8.205 11.366.6.111.82-.261.82-.58 
+				0-.287-.011-1.244-.016-2.255-3.338.727-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757
+				-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.606
+				-2.665-.304-5.466-1.333-5.466-5.931 0-1.31.469-2.382 1.237-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 
+				1.23a11.49 11.49 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.292-1.552 3.298-1.23 
+				3.298-1.23.655 1.653.243 2.873.12 3.176.77.839 1.236 1.911 1.236 3.221 
+				0 4.609-2.804 5.624-5.476 5.921.43.372.823 1.104.823 2.224 
+				0 1.606-.015 2.903-.015 3.296 0 .321.217.694.825.577C20.565 22.27 24 17.787 24 
+				12.5 24 5.87 18.627.5 12 .5z"/>
+			</svg>
+			View on GitHub
+		</a>
+	</p>
+	<p>
+	In the later months of Covid and throughout my senior year in high school, I spent much of my free time teaching myself programming and creating my first game, Tanks.
+	The game is a spiritual successor to the <a href="https://nintendo.fandom.com/wiki/Tanks!">Wii Play minigame</a> of the same name.
+	</p>
+	<p>
+	The project was written in <a href="https://crayonlang.org/">Crayon</a>,
+	an open-source game programming language somewhat comparable to Pygame, but with curly brace syntax.
+	The language appealed to me because of it's open-source nature and ability to run in-browser without dependencies.
+	The main challenge of this project was that Crayon has <a href="https://crayonlang.org/docs">very limited library support</a>,
+	meaing I had to program most of the game's core systems and mathematical functions from scratch.
+	The game contains manual implementations of
+	<a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search</a> for enemy pathfinding,
+	several <a href="https://jeffreythompson.org/collision-detection/table_of_contents.php"> collision detection algorithms</a> for bullets, tanks, and walls,
+	and a rudimentary vector-based physics system to handle the motion of all in-game objects. 
+	Additionally, all of the game's assets are generated in real time using only rectangles and circles (aside from menu text, which uses the Crayon text renderer).
+	</p>
+	<p>
+	At the time, I aimed to publish the game on <a href="https://twocansandstring.com/">Two Cans and String</a>,
+	a forum based social media created by <a href="https://blakeohare.com/">Blake O'Hare</a>, the programmer behind Crayon.
+	I contacted O'Hare regarding the project multiple times, and he graciously assisted me with debugging code and updating my Crayon installations properly.
+	Unfortunately, browser game support was discontinued on the site before the project was finished, though I have been told that O'Hare plans to re-integrate it in the future.
+	I am current working towards hosting Tanks on this site, and if I am ever able to host the game on TCAS as well, I will update this page accordingly.
+	</p>
+	<p>
+	This project was foundational for much of my understanding of programming.
+	I would love to return to it someday and add support for many additional features which were beyond my skill level at the time, most notably a local multiplayer battle mode.
+	</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
+
+</body>
+</html>

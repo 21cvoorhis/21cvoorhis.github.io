@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+section a {
+    text-decoration: underline;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+
+/* ===== Video Embed ===== */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="../index.html">About</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+<!-- Content -->
+<section id="content">
+	<h1>Circle Sector Packing (SOME4)</h1>
+	<h2>June 2025 - August 2025</h2>
+	
+	<!-- Embedded YouTube Video -->
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/3vj-yUOgotM" 
+            title="The Geometry of Packing Circle Sectors"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+	
+	<p>
+	The <a href="https://some.3b1b.co/">Summer of Math Exposition</a> (SOME) is an annual contest that aims to encourage the creation of digital math content.
+	SOME4 was hosted from June to August 2025, and I submitted a video based on math proof I had created demonstrating a novel method for packing circular sectors on an infinite Euclidean plane.
+	The video, <a href="https://youtu.be/3vj-yUOgotM">The Geometry of Packing Circle Sectors</a>, ended up placing Rank 24 among roughly 400 other video entries.
+	</p>
+	<p>
+	The video idea came about in November 2023 during a text conversation about waffles, as recreated in the video's introduction.
+	The "sector connector" packing method occurred to me during this conversation, but it took several months of on-and-off work for me to formally prove its effectiveness as compared to other more obvious packing methods.
+	From there, the concept laid dormant until the announcement of SOME4 in June 2025.
+	At that point, I had already derived the video's core equation (the density of the sector connector) and worked through proofs for the density of several related packing structures,
+	so I decided to try and work my derivation into a video format.
+	</p>
+	<p>
+	The video is animated using <a href="https://www.manim.community/">Manim</a>, a math animation Python library created by the host of SOME,
+	and edited with DaVinci Resolve.
+	Between script writing, animation, editing, and voiceover, the video took more than 100 hours to produce (~10 hours of work per minute of produced video).
+    </p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
+
+</body>
+</html>

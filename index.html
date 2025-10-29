@@ -1,171 +1,238 @@
-<!--Dark Mode: Body Background = #333, Text Color = #ccc-->
-<!--<img src="images\CrackerBarrel.png" alt="Colin Voorhis in a Cracker Barrel, with a hot chocolate." style="width:25%">-->
-
-<!-- Background color: #36373e-->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	
-	<title>Colin Voorhis</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="/images/favicon.png">
-	
-	<style>
-	
-	body{
-		margin: auto;
-		background-color: #1a1924;
-		font-family: Helvetica, sans-serif;
-	}
-	
-	p{
-		font-size:20px;
-		color: #ccc;
-	}
-	
-	h1{
-		color: #ddd;
-	}
-	
-	li{
-		color: #ccc;
-	}
-	
-	ul.p{
-		font-size:20px;
-		color: #ccc;
-	}
-	
-	a{
-		color: #00bfff;
-	}
-	a:visited{
-		color: #9932cc;
-	}
-	
-	.normal-content{
-		max-width: 1000px;
-		margin: auto;
-		padding-right: 50px;
-		padding-left: 50px;
-	}
-	
-	.centered-content{
-		max-width: 1000px;
-		margin: auto;
-		padding-right: 50px;
-		padding-left: 50px;
-		text-align: center;
-	}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
 
-	ul.nav {
-		padding-left: 0px;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		color: #bbb;
-		background-color: #000;
-		text-align: center;
-		position: relative;
-		bottom: 16px;
-	}
-	
-	ul.nav li{
-		display: inline-block;
-		padding: 10px 20px;
-		font-size: 24px;
-		text-decoration: none;
-		color: #bbb;
-	}
-	
-	.top-bar-link a{
-		color: #bbb;
-		font-size: 24px;
-		text-decoration: none;
-		font-family: Courier, sans-serif;
-	}
-	
-	.top-bar-link a:hover{
-		color: #ddd;
-	}
-	
-	.top-bar-title a{
-		color: #f2f2f2;
-		font-size: 40px;
-		text-decoration: none;
-		font-family: Courier, sans-serif;
-	}
-	
-	.top-bar-title a:hover{
-		color: #fff;
-	}
-	
-	.footer{ 
-		padding-top: 50px;
-		text-align: center;
+a {
+    color: #ddd;
+    text-decoration: none;
+	transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+p {
+	font-size: 1.1em;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: left;
+}
+
+.hero img {
+    border-radius: 12px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.hero .bio {
+    max-width: 600px;
+}
+
+.hero a{
+    text-decoration: underline;
+}
+
+/* ===== Card Grid ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s, background-color 0.2s;
+	display: block; /* Makes the entire card area clickable */
+}
+
+
+.card:hover {
+    transform: translateY(-4px);
+    background-color: #333333;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.card p {
+    color: #aaa;
+    margin-bottom: 0.5em; /* reduce vertical space at the bottom of cards */
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
     }
-   
-	</style>
-	
+    .hero img {
+        margin-bottom: 20px;
+    }
+}
+</style>
 </head>
-
 <body>
 
-<ul class="nav">
-	<li>
-		<div class="top-bar-title">
-			<a href="./index.html">Colin Voorhis</a>
-		</div>
-	</li>
-	<li style="transform: translateY(-8%);">
-		<div class="top-bar-link">
-			<a href="./projects.html" style="text-decoration: none;">Projects</a>
-		</div>
-	</li>
-	<li style="transform: translateY(-8%);">
-		<div class="top-bar-link">
-			<a href="./index.html" style="text-decoration: none;">Coming Soon</a>
-		</div>
-	</li>
-</ul>
+<!-- Navigation -->
+<nav>
+    <a href="index.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-<div class="normal-content">
+<!-- Future Nav 
+<nav>
+    <a href="../index.html">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#games">Games</a>
+    <a href="#writing">Writing</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+-->
 
-	<img src="images\ColinLake.jpg" alt="Colin Voorhis at the NASA Great Lakes Science Center, leaning on a spiraled wood art installation." width="400px" style="border-radius:10%; transform:translateX(10px); float: right;"><br>
-	
-	<h1>About Me</h1>
-	<p>
-	Hey there! I'm Colin, a college student currently pursing a B.S. Physics at The Ohio State University, with a minor in Nuclear Engineering.
-	My interests include game design, piano, and recreational math.
-	</p>
-	
-	<h1>Contact</h1>
-	<p>
-	The best way to reach me is via email at <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>.
-	Feel free to reach out about any of my projects, or if you run into any issues on this site.
-	</p>
-	<p>
-	Business inquiries or site related issues should receive a response in 2-3 business days.
-	If you don't hear back on that timeframe, please reach back out again!
-	I aim to answer all other questions on that timeframe as well, but non-urgent emails may have a longer response time.
-	</p>
-	<p>
-	I can also be reached at <a href="mailto:voorhis.18@osu.edu">voorhis.18@osu.edu</a> with any OSU specific inquiries.
-	</p>
-	
-	<div class="footer">
-		<p>
-			<a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a> - <a href="https://github.com/21cvoorhis">GitHub</a> - <a href="https://www.linkedin.com/in/colinvoorhis/">LinkedIn</a>
-		</p>
+<!-- Hero / About Section -->
+<section id="about" class="hero">
+    <img src="images/ColinLake.jpg" alt="Colin Voorhis" />
+    <div class="bio">
+        <h1>Colin Voorhis</h1>
+        <p>Hello! I'm Colin, a Nuclear Engineering graduate student and programmer. 
+        I'm interested in STEM education, music, and game design. </p>
+		<p>I am currently a Masters student at The Ohio State University conducting research with <a href="https://mae.osu.edu/ncg">The Nuclear Computing Group</a>
+		under <a href="https://mae.osu.edu/people/wang.12239">Dr. Wang</a>.
+		I graduated Summa Cum Laude from OSU in 2025 with a B.S. Physics. </p>
+		<p>You can reach me at <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a> or via the <a href="contact.html">contact form</a> on this website.
+    </div>
+</section>
+
+<!-- Research -->
+<section id="research">
+    <h2>Research</h2>
+	<div class="card-grid">
+		<a href="research/ncg.html" class="card">
+			<h3>Nuclear Computation (NCG)</h3>
+			<p>Simulating nuclear energy systems with The Nuclear Computing Group at OSU.</p>
+		</a>
+		<a href="research/cost.html" class="card">
+			<h3>Genetic Algorithms (COST)</h3>
+			<p>Applying genetic algorithms to partitioning problems with The COST Lab at OSU using MatLab.</p>
+		</a>
 	</div>
-	
-</div>
+</section>
+
+<!-- Projects -->
+<section id="Projects">
+    <h2>Projects</h2>
+	<div class="card-grid">
+		<a href="projects/some4.html" class="card">
+			<h3>Cicle Sector Packing (SOME4)</h3>
+			<p>Video on the optimal packing of circular sectors created for the 4th Summer of Math Exposition.</p>
+		</a>
+		<a href="projects/physics.html" class="card">
+			<h3>Experimental Physics Reports</h3>
+			<p>Three advanced experiements from different physics disiplines, with associated reports.</p>
+		</a>
+	</div>
+	<br>
+	<div class="card-grid">
+		<a href="projects/cobalt.html" class="card">
+			<h3>Co-60 Source Shielding</h3>
+			<p>Design of the encapsulation layers for a volumetric Cobalt-60 source using MCNP and Python.</p>
+		</a>
+		<a href="projects/goodreads.html" class="card">
+			<h3>Goodreads Neural Network</h3>
+			<p>Book recommendation algorithm based on Goodreads reviews and ratings using Python.</p>
+		</a>
+	</div>
+	<br>
+	<div class="card-grid">
+		<a href="projects/bingo.html" class="card">
+			<h3>Bingo Statistical Analysis</h3>
+			<p>Monte-Carlo analysis of 75-Ball Bingo using C++.</p>
+		</a>
+		<a href="projects/tanks.html" class="card">
+			<h3>Tanks</h3>
+			<p>Spiritual successor to Wii Tanks written in Crayon.</p>
+		</a>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
 
 </body>
 </html>
-
-<!--
-<p style="float: right; transform:translateY(50px)">
-	<img src="images\CrackerBarrelEdit2.png" alt="Colin Voorhis in a Cracker Barrel, with a hot chocolate." width="350px" style="border-radius:50%;"><br>
-</p>
--->

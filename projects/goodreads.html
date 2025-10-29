@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+section a {
+    text-decoration: underline;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="../index.html">About</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+<!-- Content -->
+<section id="content">
+	<h1>Goodreads Neural Network</h1>
+	<h2>September 2024 - November 2024</h2>
+	<iframe 
+		src="pdf/5680_goodreads.pdf" 
+		width="100%" 
+		height="600px" 
+		style="border: none;">
+	</iframe>
+    <p>
+	During my senior year at OSU,
+	I elected to take Big Data Analytics in Physics with <a href="https://physics.osu.edu/people/hughes.319">Dr. Hughes</a>,
+	a course focused on machine learning and advanced algorithms in the context of scientific research and dataset analysis.
+	The final project for this course required students to use apply machine learning algorithms to categorize a large dataset,
+	and train that algorithm using the <a href="https://www.osc.edu/">Ohio Supercomputer Center</a>.
+	I elected to create a novel text-based book recommendation algorithm in Python based on
+	<a href="https://en.wikipedia.org/wiki/Neural_network_(machine_learning)">fully connected neural networks</a> and
+	<a href="https://en.wikipedia.org/wiki/BERT_(language_model)">bidirectional encoder representations from transformers</a>.
+	The algorithm was able to predict binary user preferences with >70% accuracy
+	using a training set of less than 7000 book descriptions and review pairs.
+	</p>
+	<p>
+	This algorithm was inspired by the limitations of most book recommendation algorithms,
+	namely their lack of genuine personalization, large computational cost, and heavy reliance on book popularity to generate suggestions.
+	Many of these algorithms aggregate review metrics from a large sample of users to determine the quality of a book,
+	meaning the most frequently reviewed books are far more likely to be recommended to users.
+	I attempted to sidestep these limitations by focusing on text-based reviews and book descriptions, rather than numerical ratings.
+	Every book in the Goodreads database has an associated text description,
+	greatly increasing the number of works the algorithm can extract meaningful data from and recommend,
+	and this data is much more nuanced than a numerical rating.
+	</p>
+	<p>
+	In the future, I would love to return to this project and pursue the ideas laid out in the conclusion of this report.
+	Specifically, I would like to train the algorithm on a larger dataset, then release an interactive version of the network.
+	</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
+
+</body>
+</html>

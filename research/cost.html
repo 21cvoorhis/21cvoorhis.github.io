@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colin Voorhis</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<style>
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    background-color: #111111;
+    font-family: 'Helvetica', sans-serif;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: #1de9b6;
+}
+
+/* ===== Navigation ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+section a {
+    text-decoration: underline;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin: 60px 0 20px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+footer a {
+    margin: 0 10px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <a href="../index.html">About</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+<!-- Contact Info -->
+<section id="contact">
+	<h1>Genetic Partitions (COST)</h1>
+	<h2>August 2024 - May 2025</h2>
+    <p>
+	During my senior undergraduate year at OSU,
+	I worked with the <a href="https://mae.osu.edu/costl">COST Lab</a> under the advisement of <a href="https://mae.osu.edu/people/stockar.1">Dr. Stockar</a> and Audrey Blizard developing genetic algorithms to solve mathematical partitioning problems.
+	This research was one supporting element of Ms. Blizard's dissertation work, which was focused on optimizing the control of distributed heating networks using a partition based approach.
+	See their associated <a href="https://www.researchgate.net/publication/378297654_A_Graph-Based_Technique_for_the_Automated_Control-Oriented_Modeling_of_District_Heating_Networks">publication</a>
+	for additional information on this problem and the techniques used to solve it.
+	</p>
+	<p>
+	My contribution was in helping select an optimal set of partitions for a given distributed heating network.
+	I used a genetic algorithm approach to solve this problem. The algorithm begins with a set of nodes grouped repeatedly into many different random partitions, called partition sets.
+	These parent sets are used to create several child sets via mutations including jumps (moving a node to a different partition) and crossovers (swapping the partitions of two nodes simultaneously).
+	Each child set is then evaluated using a cost function, and a group of the highest performing sets are used as the parent sets for a new round of mutations.
+	The initial sets only use two distinct partitions, but sets can additionally be mutated by creating "subsets", i.e. splitting a partition into two smaller partitions.
+	The best performing partition sets for each number of partitions are saved separately; different partition counts may be more or less optimal for different use cases.
+	</p>
+	<p>
+	This algorithm was implemented in MatLab using <a href="https://web.casadi.org/">CasADi</a> to help optimize the generated partition sets.
+	Unfortunately, the code for this implementation is not public.
+	If you are a potential employer or collaborator, please <a href="../contact.html">reach out</a> to me privately,
+	so that I can work with COST to provide you additional information on this project.
+	</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="mailto:21cvoorhis@gmail.com">21cvoorhis@gmail.com</a>
+</footer>
+
+</body>
+</html>
